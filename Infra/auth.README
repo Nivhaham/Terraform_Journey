@@ -1,0 +1,11 @@
+gcloud cli
+run: auth application-default login
+google service account
+google cloud api enabled
+
+if running terraform outside google cloud:
+use google cloud service account with terraform.
+create a new service account, download the json key file and store it.
+supply the key to terraform using 
+the enviornment variables - google_application_credentials.
+set the value to the location of the file.
