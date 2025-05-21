@@ -6,7 +6,11 @@ terraform {
     }
   }
 }
-
+resource "google_project_iam_member" "compute_admin" {
+  project = "playground-s-11-db40a311"
+  role    = "roles/compute.instanceAdmin.v1"
+  member  = "serviceAccount:cli-service-account-1@playground-s-11-db40a311.iam.gserviceaccount.com"
+}
 provider "google" {
   # Configuration options
   project = "playground-s-11-db40a311" #change it to your project id
@@ -15,11 +19,6 @@ provider "google" {
   credentials = file("gcp-creds/terraform-key.json")
 }
 
-resource "google_project_iam_member" "compute_admin" {
-  project = "playground-s-11-db40a311"
-  role    = "roles/compute.instanceAdmin.v1"
-  member  = "serviceAccount:terraform-admin@playground-s-11-db40a311.iam.gserviceaccount.com"
-}
 
 resource "google_compute_instance" "basic-compute" {
   name         = "test-instance"

@@ -86,4 +86,6 @@ You should see Terraform connect and plan resources in your GCP environment.
 
 ---
 
-Would you like help with setting up **Workload Identity Federation** (no key file at all) or using **Terraform Cloud with GCP**?
+You Have to Enable:
+Cloud Resource Manager API
+in Google Cloud to be able to run terraform commands.
